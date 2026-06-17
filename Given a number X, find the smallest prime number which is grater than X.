@@ -1,0 +1,28 @@
+#include <stdio.h>
+int main() {
+    int x;
+    printf("Enter a number X: ");
+    if (scanf("%d", &x) != 1) {
+        printf("Invalid input.\n");
+        return 1;
+    }
+    int next_num = x + 1;
+    if (next_num < 2) {
+        next_num = 2;
+    }
+    while (1) {
+        int is_prime = 1; 
+        for (int i = 2; i * i <= next_num; i++) {
+            if (next_num % i == 0) {
+                is_prime = 0; 
+                break;
+            }
+        }
+        if (is_prime) {
+            break;
+        }
+        next_num++;
+    }
+    printf("The smallest prime number greater than %d is: %d\n", x, next_num);
+    return 0;
+}
