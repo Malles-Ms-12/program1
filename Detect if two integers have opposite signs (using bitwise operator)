@@ -1,0 +1,20 @@
+#include <stdio.h>
+int main() {
+    int a, b;
+    printf("Enter first integer: ");
+    if (scanf("%d", &a) != 1) {
+        printf("Invalid input.\n");
+        return 1;
+    }
+    printf("Enter second integer: ");
+    if (scanf("%d", &b) != 1) {
+        printf("Invalid input.\n");
+        return 1;
+    }
+    if ((a ^ b) < 0) {
+        printf("The integers %d and %d have OPPOSITE signs.\n", a, b);
+    } else {
+        printf("The integers %d and %d have the SAME sign.\n", a, b);
+    }
+    return 0;
+}
