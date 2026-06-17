@@ -1,0 +1,16 @@
+#include <stdio.h>
+int main() {
+    int a, b;
+    printf("Enter first number: ");
+    scanf("%d",&a);
+    printf("Enter second number: ");
+    scanf("%d", &b);
+    while (b!=0) {
+        int carry = a & b;          
+        a = a ^ b;                  
+        b = carry<<1; 
+    }
+    printf("The sum is: %d\n",a);
+    return 0;
+}
+
